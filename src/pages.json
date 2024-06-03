@@ -1,0 +1,41 @@
+{
+  "pages": [
+    {
+      "path": "pages/tabbar/book/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabbar/mine/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#949494",
+    "selectedColor": "#409eff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/book/index",
+        "text": "书架",
+        "iconPath": "static/tabbar/book.svg",
+        "selectedIconPath": "static/tabbar/book-select.svg"
+      },
+      {
+        "pagePath": "pages/tabbar/mine/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.svg",
+        "selectedIconPath": "static/tabbar/mine-select.svg"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "阅读器",
+    "navigationBarBackgroundColor": "#F5F5F5",
+    "backgroundColor": "#F5F5F5"
+  }
+}

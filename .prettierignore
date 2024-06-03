@@ -1,17 +1,3 @@
-# 目录
-*.git/
-*.husky/
-dist/
-lib/
-node_modules/
-fonts
-
-# 文件
-.editorconfig
-.eslintignore
-.npmignore
-.prettierignore
-.prettierrc
-LICENSE
-package.json
-package-lock.json
+.git
+dist
+node_modules

@@ -4,15 +4,21 @@ import { resolve } from 'path'
 import eslint from 'vite-plugin-eslint'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
+import tailwindcss from 'tailwindcss'
+
+const spacing = {}
+
+Array.from({ length: 1000 }, (_, i) => {
+  spacing[i] = `${i}rpx`
+})
 
 export default defineConfig({
   base: './',
   plugins: [
     eslint(),
-    uni(),
     autoImport({
-      imports: ['vue', { '@dcloudio/uni-app': ['onShow', 'onLaunch', 'onHide', 'onLoad'] }],
-      ignore: ['types.ts'],
+      imports: ['vue', { '@dcloudio/uni-app': ['onLaunch', 'onShow', 'onHide', 'onLoad', 'onReady', 'onReachBottom'] }],
+      dirs: ['./src/composables'],
       dts: './types/auto-imports.d.ts',
       eslintrc: {
         enabled: true,
@@ -25,11 +31,12 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/],
       exclude: [/node_modules/, 'types.ts'],
       dts: './types/components.d.ts'
-    })
+    }),
+    (uni as Record<string, any>).default()
   ],
   server: {
     host: '0.0.0.0',
-    port: 8090
+    port: 8091
   },
   resolve: {
     /**
@@ -47,6 +54,25 @@ export default defineConfig({
       less: {
         additionalData: `@import '@/styles/variable.less';`
       }
+    },
+    postcss: {
+      plugins: [
+        tailwindcss({
+          content: ['./src/**/*.vue'],
+          theme: {
+            spacing,
+            extend: {
+              fontSize: ({ theme }) => theme('spacing'),
+              borderRadius: ({ theme }) => theme('spacing'),
+              colors: {
+                85: 'rgba(0,0,0,0.85)',
+                45: 'rgba(0,0,0,0.45)',
+                2: 'rgba(0,0,0,0.02)'
+              }
+            }
+          }
+        })
+      ]
     }
   }
 })

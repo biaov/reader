@@ -33,6 +33,9 @@ declare global {
   const onLaunch: typeof import('@dcloudio/uni-app')['onLaunch']
   const onLoad: typeof import('@dcloudio/uni-app')['onLoad']
   const onMounted: typeof import('vue')['onMounted']
+  const onNavto: typeof import('../src/composables/useRouter')['onNavto']
+  const onReachBottom: typeof import('@dcloudio/uni-app')['onReachBottom']
+  const onReady: typeof import('@dcloudio/uni-app')['onReady']
   const onRenderTracked: typeof import('vue')['onRenderTracked']
   const onRenderTriggered: typeof import('vue')['onRenderTriggered']
   const onScopeDispose: typeof import('vue')['onScopeDispose']
@@ -55,8 +58,10 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useConfig: typeof import('../src/composables/useConfig')['useConfig']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useRouter: typeof import('../src/composables/useRouter')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -66,5 +71,6 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { Component, ComponentPublicInstance, ComputedRef, InjectionKey, PropType, Ref, VNode } from 'vue'
+  export type { Component, ComponentPublicInstance, ComputedRef, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, VNode, WritableComputedRef } from 'vue'
+  import('vue')
 }
