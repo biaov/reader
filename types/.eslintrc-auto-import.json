@@ -72,6 +72,10 @@
     "onReady": true,
     "useConfig": true,
     "onNavto": true,
-    "useRouter": true
+    "useRouter": true,
+    "useVisible": true,
+    "getIOSBottomHeight": true,
+    "useSystem": true,
+    "useSystemInfo": true
   }
 }

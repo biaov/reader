@@ -7,9 +7,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    copy: typeof import('./../src/components/screen-custom copy/index.vue')['default']
+    copy: typeof import('./../src/components/page-tag copy.vue')['default']
+    PageAlert: typeof import('./../src/components/page-alert.vue')['default']
+    PageButton: typeof import('./../src/components/page-button.vue')['default']
     PageCell: typeof import('./../src/components/page-cell.vue')['default']
+    PageCustom: typeof import('./../src/components/page-custom.vue')['default']
     PageScreen: typeof import('./../src/components/page-screen/index.vue')['default']
+    PageTag: typeof import('./../src/components/page-tag.vue')['default']
     RenderSvg: typeof import('./../src/components/render-svg.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

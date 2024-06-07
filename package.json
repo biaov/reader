@@ -29,11 +29,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/biaovorg/reader"
+    "url": "https://github.com/biaov/reader"
   },
-  "homepage": "https://gitee.com/biaovorg/reader",
+  "homepage": "https://github.com/biaov/reader",
   "bugs": {
-    "url": "https://gitee.com/biaovorg/reader/issues"
+    "url": "https://github.com/biaov/reader/issues"
   },
   "license": "ISC",
   "contributors": [

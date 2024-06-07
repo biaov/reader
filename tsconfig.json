@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": [],
+    "types": ["@dcloudio/types",],
     "baseUrl": "./",
 
     /* 模块解析方式 */

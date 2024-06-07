@@ -9,7 +9,8 @@ const config = {
   },
   globals: {
     uni: 'readonly',
-    UniApp: 'readonly'
+    UniApp: 'readonly',
+    plus: 'readonly'
   },
   extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended', './types/.eslintrc-auto-import.json'],
   parserOptions: {

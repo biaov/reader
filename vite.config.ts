@@ -5,6 +5,7 @@ import eslint from 'vite-plugin-eslint'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import tailwindcss from 'tailwindcss'
+import { theme } from './src/config/theme'
 
 const spacing = {}
 
@@ -47,14 +48,14 @@ export default defineConfig({
     }
   },
   css: {
-    /**
-     * 配置预编译器
-     */
     preprocessorOptions: {
       less: {
         additionalData: `@import '@/styles/variable.less';`
       }
     },
+    /**
+     * 配置预编译器
+     */
     postcss: {
       plugins: [
         tailwindcss({
@@ -65,9 +66,10 @@ export default defineConfig({
               fontSize: ({ theme }) => theme('spacing'),
               borderRadius: ({ theme }) => theme('spacing'),
               colors: {
-                85: 'rgba(0,0,0,0.85)',
-                45: 'rgba(0,0,0,0.45)',
-                2: 'rgba(0,0,0,0.02)'
+                'custom-85': 'rgba(0,0,0,0.85)',
+                'custom-45': 'rgba(0,0,0,0.45)',
+                'custom-2': 'rgba(0,0,0,0.02)',
+                ...theme
               }
             }
           }
