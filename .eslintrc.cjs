@@ -10,7 +10,10 @@ const config = {
   globals: {
     uni: 'readonly',
     UniApp: 'readonly',
-    plus: 'readonly'
+    plus: 'readonly',
+    UnionToIntersection: 'readonly',
+    getCurrentPages: 'readonly',
+    NodeJS: 'readonly'
   },
   extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended', './types/.eslintrc-auto-import.json'],
   parserOptions: {
@@ -61,7 +64,8 @@ const config = {
     'no-restricted-exports': 'off', // 禁止默认导出
     'vue/multi-word-component-names': 'off', // 禁止多个单词名称
     'default-case': 'off', // switch...case 一定要有 default
-    'import/no-extraneous-dependencies': 'off' // dependencies, not devDependencies
+    'import/no-extraneous-dependencies': 'off', // dependencies, not devDependencies
+    'consistent-return': 'off' // 函数返回
   }
 }
 

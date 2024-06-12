@@ -76,6 +76,21 @@
     "useVisible": true,
     "getIOSBottomHeight": true,
     "useSystem": true,
-    "useSystemInfo": true
+    "useSystemInfo": true,
+    "useToast": true,
+    "useRegExp": true,
+    "useGlobal": true,
+    "viteConfig": true,
+    "envD": true,
+    "getStorage": true,
+    "loadFileContent": true,
+    "removeStorage": true,
+    "rpxtopx": true,
+    "service": true,
+    "setStorage": true,
+    "use": true,
+    "useAnim": true,
+    "useAnimation": true,
+    "useVisibleAnimation": true
   }
 }

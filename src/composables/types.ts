@@ -11,3 +11,23 @@ export interface AppConfig {
    */
   themes: string[]
 }
+
+/**
+ * useVisible
+ */
+export namespace USEVisible {
+  interface Props extends Record<string, any> {
+    visible: boolean
+  }
+
+  interface Emits extends Record<string, any> {
+    (event: 'update:visible', value: boolean): void
+  }
+
+  export interface VisibleAnimation {
+    props: Props
+    emit: Emits
+    init?: () => void
+    duration?: number
+  }
+}

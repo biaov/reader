@@ -20,8 +20,7 @@ export const useConfig = () => {
  * 获取底部高度
  */
 export const useSystemInfo = () => {
-  const { screenHeight, safeArea, windowHeight } = uni.getSystemInfoSync()
+  const { screenHeight, safeArea, windowHeight, windowTop } = uni.getSystemInfoSync()
   const iosBottomHeight = screenHeight - safeArea!.bottom
-
-  return { iosBottomHeight, windowHeight }
+  return { iosBottomHeight, windowHeight, windowTop }
 }

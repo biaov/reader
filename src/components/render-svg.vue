@@ -14,7 +14,7 @@ const props = withDefaults(
   }
 )
 
-const svgContent = ref(props.src)
+const svgContent = ref('')
 const [config] = useConfig()
 const renderSvg = (content: string) => {
   const color = props.color || config.value.theme
@@ -25,7 +25,10 @@ const renderSvg = (content: string) => {
  * 初始化 svg 内容
  */
 const initSvgContent = async () => {
-  if (!props.theme) return
+  if (!props.theme) {
+    svgContent.value = props.src
+    return
+  }
   // #ifdef H5
   const fileContent = await loadFileContent(props.src)
   renderSvg(fileContent)

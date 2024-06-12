@@ -15,7 +15,7 @@ const color = computed(() => theme[props.type])
 
 <template>
   <view class="page-tag flex items-center py-10 px-20 rounded-8 justify-between" :class="type" v-if="visible">
-    <render-svg :src="icon" theme :color="color" class="w-40 h-40 mr-20" v-if="icon" />
+    <render-svg :src="icon" theme :color="color" class="w-32 h-32 mr-20" v-if="icon" />
     <view class="flex-1 text-26 text-custom-85">
       <slot></slot>
     </view>

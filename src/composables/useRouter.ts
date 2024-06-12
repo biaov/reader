@@ -1,3 +1,5 @@
+import pagesJson from '@/pages.json'
+
 /**
  * 路由操作
  */
@@ -7,7 +9,19 @@ export const useRouter = () => {
    */
   const push = (url: string) => {
     if (!url) return
-    uni.navigateTo({ url })
+    if (url.includes('pages/tabbar/')) {
+      uni.switchTab({ url })
+    } else {
+      uni.navigateTo({ url })
+    }
+  }
+
+  /**
+   * 关闭当前页面打开第三方页面
+   */
+  const replace = (url: string) => {
+    if (!url) return
+    uni.redirectTo({ url })
   }
 
   /**
@@ -27,8 +41,13 @@ export const useRouter = () => {
    * 返回之前页面
    */
   const back = (delta: number = 1) => {
-    uni.navigateBack({ delta })
+    const pages = getCurrentPages()
+    if (pages.length > delta) {
+      uni.navigateBack({ delta })
+    } else {
+      push(`/${pagesJson.pages[0].path}`)
+    }
   }
 
-  return { push, open, back }
+  return { push, replace, open, back }
 }

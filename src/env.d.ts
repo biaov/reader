@@ -6,3 +6,11 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+type ToUnionOfFunction<T> = T extends any ? (x: T) => any : never
+/**
+ * 联合类型转为交叉类型
+ */
+type UnionToIntersection<T> = ToUnionOfFunction<T> extends (x: infer P) => any ? P : never
+
+declare module 'vite-plugin-eslint'

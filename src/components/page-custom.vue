@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { iosBottomHeight, windowHeight } = useSystemInfo()
-const sys = uni.getSystemInfoSync()
 </script>
 
 <template>
