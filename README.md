@@ -1,5 +1,7 @@
 # reader
 
+未上线，开发中...
+
 一个小说阅读器 😊
 
 - [下载地址](https://github.com/biaov/reader/releases)
