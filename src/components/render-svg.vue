@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { loadFileContent } from '@/utils/request'
+import { useConfigStore } from '@/stores/config'
 
 const props = withDefaults(
   defineProps<{
@@ -15,9 +16,9 @@ const props = withDefaults(
 )
 
 const svgContent = ref('')
-const [config] = useConfig()
+const state = useConfigStore()
 const renderSvg = (content: string) => {
-  const color = props.color || config.value.theme
+  const color = props.color || state.theme
   const data = content.replace(/#[a-z0-9]{3,6}/gi, color)
   svgContent.value = `data:image/svg+xml,${encodeURIComponent(data)}`
 }
